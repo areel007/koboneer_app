@@ -1,0 +1,46 @@
+#one {
+    background-color: #f5f5f5;
+}
+
+#landing {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#landing h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: #ff4500;
+    width: auto;
+    width: 65%;
+}
+
+#landing p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #494949;
+    width: auto;
+}
+
+#dig-deep button {
+    background-color: #494949;
+    color: #fff;
+}
+
+#dig-deep:hover {
+    color: #494949;
+    background-color: #fff;
+    border: 1px solid #494949;
+    outline: none;
+}
+
+@media screen and (max-width: 1200px) {
+    #landing h1, #landing p {
+        width: 90vw;
+    }
+}

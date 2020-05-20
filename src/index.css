@@ -1,13 +1,62 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-size: 1rem;
+  overflow-x: hidden
+}
+
+.container {
+  width: 100vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+.links {
+  text-decoration: none;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h3 {
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: .5rem 2rem;
+  outline: none;
+  border: 1px solid transparent;
+}
+ a {
+   text-decoration: none;
+ }
+
+ @media screen and (max-width: 1200px) {
+   section {
+     position: relative;
+     height: auto;
+     padding: 4rem 0;
+   }
+ }

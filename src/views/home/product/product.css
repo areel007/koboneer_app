@@ -1,0 +1,123 @@
+#products {
+    background-color: #fff;
+    width: 100%;
+    /* background-image: url(../../../assets/img/undraw_product_tour_foyt.svg);
+    background-position: right 50%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.inner-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.grey {
+    background-color: #f5f5f5;
+}
+
+.product__img {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product__img img {
+    width: 100%;
+}
+
+.product__text {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.product__text h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    width: auto;
+    color: orangered;
+    font-size: 2rem;
+}
+
+.product__text p {
+    text-align: center;
+    width: auto;
+    line-height: 1.6;
+    font-size: 1.3rem;
+    color: #494949;
+}
+
+#product-one, 
+#product-three {
+    display: flex;
+    align-items: center;
+}
+
+#product-one p, 
+#product-three p,
+#product-one h2, 
+#product-three h2 {
+    text-align: right;
+    width: 25rem;
+}
+
+#product-two {
+    display: flex;
+    align-items: center;
+}
+
+#product-two p,
+#product-two h2 {
+    text-align: left;
+    width: 25rem;
+}
+
+.read-more {
+    color: orangered;
+    font-size: .8rem;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 1200px) {
+    .inner-products {
+        flex-direction: column;
+        width: 90vw;
+        justify-content: center;
+        align-items: center;
+    }
+    .product__text h2,
+    .product__text p {
+        width: 90vw;
+    }
+    #product-one, #product-three {
+        margin-top: 1rem;
+    }
+
+    #product-two {
+        margin-bottom: 1rem;
+    }
+
+    #product-one p, 
+    #product-three p,
+    #product-one h2, 
+    #product-three h2 {
+        text-align: center;
+        width: 90vw;
+    }
+    #product-two p, 
+    #product-two p,
+    #product-two h2, 
+    #product-two h2 {
+        text-align: center;
+        width: 90vw;
+    }
+}
