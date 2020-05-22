@@ -17,7 +17,7 @@ const Form = () => {
                 </div>
                 
                 <div className='form-control' id='btn'>
-                    <button>Submit</button>
+                    <button>Sign In</button>
                 </div>
                 <div className='switch'>
                     <p>Don't have an account yet? <Link id='switch' to='/signup'>Sign In</Link></p>

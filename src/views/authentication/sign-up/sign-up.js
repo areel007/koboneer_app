@@ -10,7 +10,7 @@ const SignUpPage = () => {
                 <div className='landing-image'>
                     <LandingImage />
                 </div>
-                <div id='landing-form'>
+                <div className='landing-form'>
                     <SignUpForm />
                 </div>
             </div>

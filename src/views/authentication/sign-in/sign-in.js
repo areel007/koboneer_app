@@ -10,7 +10,7 @@ const SignInPage = () => {
                 <div className='landing-image'>
                     <LandingImage />
                 </div>
-                <div id='landing-form'>
+                <div className='landing-form'>
                     <SignInForm />
                 </div>
             </div>

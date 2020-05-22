@@ -32,7 +32,7 @@ const Form = () => {
                     <input type='password' />
                 </div>
                 <div className='form-control' id='btn'>
-                    <button>Submit</button>
+                    <button>Sign Up</button>
                 </div>
                 <div className='switch'>
                     <p>Already have an account? <Link id='switch' to='/signin'>Sign In</Link></p>
