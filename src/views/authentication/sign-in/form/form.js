@@ -8,14 +8,14 @@ const Form = () => {
             <h1>Sign In</h1>
             <div id='inner-form'>
                 <div className='form-control'>
-                    <label>Username:</label>
+                    <label>Email</label>
                     <input type='text' />
                 </div>
                 <div className='form-control'>
-                    <label>Password:</label>
+                    <label>Password</label>
                     <input type='password' />
                 </div>
-                
+                <span id='forget-password'>Forget Password? <Link to='/' id='reset'>Reset</Link></span>
                 <div className='form-control' id='btn'>
                     <button>Sign In</button>
                 </div>

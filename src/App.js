@@ -39,14 +39,14 @@ class App extends Component {
     return (
       <div className="container">
         {
-          this.props.location.pathname != '/dashboard' && <Header header={this.state.header} product={this.state.product} company={this.state.company} user={this.state.user} openMenu={this.openMenu} />
+          this.props.location.pathname != '/dashboard' && this.props.location.pathname === '/' && <Header header={this.state.header} product={this.state.product} company={this.state.company} user={this.state.user} openMenu={this.openMenu} />
         }
-        <Route path='/' exact component={Home} />
-        <Route path='/signup' component={SignUpPage} />
-        <Route path='/signin' component={SignInPage} />
-        <Route path='/dashboard' component={Dashboard} />
+        <Route path='/' exact component={ Home } />
+        <Route path='/signup' component={ SignUpPage } />
+        <Route path='/signin' component={ SignInPage } />
+        <Route path='/dashboard' component={ Dashboard } />
         {
-          this.props.location.pathname != '/dashboard' && <Footer />
+          this.props.location.pathname != '/dashboard' && this.props.location.pathname === '/' && <Footer />
         }
       </div>
     );

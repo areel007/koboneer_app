@@ -1,6 +1,7 @@
 #form-landing {
     width: 60%;
     height: 60%;
+    display: flex;
 }
 
 #form-landing img {

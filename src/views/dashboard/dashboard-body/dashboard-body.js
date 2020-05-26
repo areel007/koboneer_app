@@ -1,13 +1,13 @@
 import React from 'react';
-import DashboardHeader from '../header-dashboard/header-dashboard';
 import DashboardMainBody from '../dashboard-body/main-body-dashboard';
+import DashboardSidebar from '../dashboard-sidebar/dashboard-sidebar';
 import './dashboard-body.css';
 
 const DashboardBody = () => {
     return(
         <main id='dashboard-body'>
             <div id='dashboard-body-inner'>
-                <DashboardHeader />
+                <DashboardSidebar />
                 <DashboardMainBody />
             </div>
         </main>

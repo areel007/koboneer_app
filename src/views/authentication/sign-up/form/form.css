@@ -5,7 +5,7 @@
     align-items: center;
     flex-direction: column;
     background-color: #fff;
-    padding: 2rem 0 0 0;
+    justify-content: center;
 }
 
 #form h1 {
@@ -74,5 +74,9 @@
 @media screen and (max-width: 1200px) {
     #inner-form {
         grid-template-columns: 1fr;
+        width: 90%;
+    }
+    #inner-form h1 {
+        width: 90%;
     }
 }

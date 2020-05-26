@@ -8,14 +8,6 @@ const Form = () => {
             <h1>Register</h1>
             <div id='inner-form'>
                 <div className='form-control'>
-                    <label>First Name:</label>
-                    <input type='text' />
-                </div>
-                <div className='form-control'>
-                    <label>Last Name:</label>
-                    <input type='text' />
-                </div>
-                <div className='form-control'>
                     <label>Email:</label>
                     <input type='email' />
                 </div>
@@ -27,10 +19,7 @@ const Form = () => {
                     <label>Confirm Password:</label>
                     <input type='password' />
                 </div>
-                <div className='form-control'>
-                    <label>Phone Number:</label>
-                    <input type='password' />
-                </div>
+                
                 <div className='form-control' id='btn'>
                     <button>Sign Up</button>
                 </div>
