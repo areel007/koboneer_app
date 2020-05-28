@@ -10,9 +10,9 @@ class Landing extends Component {
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ullam sunt quibusdam explicabo animi,
                     voluptas earum. Ex similique sequi asperiores omnis, modi commodi itaque voluptas neque, sed laborum
                         deserunt maxime.</p>
-                    <Link to='/dashboard' id="dig-deep">
+                    <div id="dig-deep">
                         <button id="dig-deep">Dig Deep</button>
-                    </Link>
+                    </div>
                 </div>
             </section>
         )
