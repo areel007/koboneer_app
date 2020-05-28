@@ -7,11 +7,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import './history.css';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white,
+        backgroundColor: '#494949',
+        color: '#fff',
     },
     body: {
         fontSize: 14,
@@ -21,21 +22,21 @@ const StyledTableCell = withStyles((theme) => ({
 const StyledTableRow = withStyles((theme) => ({
     root: {
         '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.action.hover,
+            backgroundColor: '#f9f9f9',
         },
     },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
+function createData(token, transactionType, status, date, amount) {
+    return { token, transactionType, status, date, amount };
 }
 
 const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
+    createData('kobo0235token', 'Buy For Me', 'Successful', '01/01/2020', '105,000.00'),
+    createData('kobo5643token', 'Buy For Me', 'Successful', '03/05/2020', '54,000.00'),
+    createData('kobo0001token', 'Sell For Me', 'Successful', '03/30/2020', '207,000.00'),
+    createData('kobo2502token', 'Trade E-Currency', 'Successful', '05/10/2020', '500,000.00'),
+    createData('kobo1926token', 'Buy For Me', 'Failed', '28/05/2020', '402,000.00'),
 ];
 
 const useStyles = makeStyles({
@@ -47,35 +48,50 @@ const useStyles = makeStyles({
 const History = () => {
 
     const classes = useStyles();
+    const success = {
+        color: 'green',
+    };
+    const failure = {
+        color: 'red',
+    };
 
     return (
         <div id='history'>
-            <TableContainer component={Paper}>
-                <Table className={classes.table} aria-label="customized table">
-                    <TableHead>
-                        <TableRow>
-                            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-                            <StyledTableCell align="right">Calories</StyledTableCell>
-                            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-                            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-                            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {rows.map((row) => (
-                            <StyledTableRow key={row.name}>
-                                <StyledTableCell component="th" scope="row">
-                                    {row.name}
-                                </StyledTableCell>
-                                <StyledTableCell align="right">{row.calories}</StyledTableCell>
-                                <StyledTableCell align="right">{row.fat}</StyledTableCell>
-                                <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-                                <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                            </StyledTableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+            <div id='inner-history'>
+                <h2>Transaction History</h2>
+                <div id='search-box'>
+                    <input type='text' />
+                    <button id='search-icon'>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <TableContainer component={Paper}>
+                    <Table className={classes.table} aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell>Token</StyledTableCell>
+                                <StyledTableCell align="left">Transaction Type</StyledTableCell>
+                                <StyledTableCell align="left">Status</StyledTableCell>
+                                <StyledTableCell align="left">Date</StyledTableCell>
+                                <StyledTableCell align="left">Amount</StyledTableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {rows.map((row) => (
+                                <StyledTableRow key={row.token}>
+                                    <StyledTableCell component="th" scope="row">
+                                        {row.token}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="left">{row.transactionType}</StyledTableCell>
+                                    <StyledTableCell align="left" style={ row.status === 'Successful' ? success : failure }>{row.status}</StyledTableCell>
+                                    <StyledTableCell align="left">{row.date}</StyledTableCell>
+                                    <StyledTableCell align="left">&#8358;{row.amount}</StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </div>
         </div>
     );
 }

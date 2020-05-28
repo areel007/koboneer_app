@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
     return (
         <aside id='sidebar'>
-            <div className='dashboard-products'>
+            <a href='#buy-for-me' className='dashboard-products'>
                 <div className='icon'>
                     <i className="fas fa-shopping-bag"></i>
                 </div>
                 <div className='product__dashborad'>
                     <span>Buy For Me</span>
                 </div>
-            </div>
+            </a>
             <div className='dashboard-products'>
                 <div className='icon'>
                     <i className="fas fa-money-bill-wave-alt"></i>
@@ -29,14 +29,14 @@ const Sidebar = () => {
                     <span>Sell For Me</span>
                 </div>
             </div>
-            <div className='dashboard-products'>
+            <a href='#history' className='dashboard-products'>
                 <div className='icon'>
                     <i className="fas fa-file-medical-alt"></i>
                 </div>
                 <div className='product__dashborad'>
                     <span>History</span>
                 </div>
-            </div>
+            </a>
             <div className='dashboard-products'>
                 <div className='icon'>
                     <i className="fas fa-sign-out-alt"></i>
