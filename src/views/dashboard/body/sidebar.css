@@ -1,0 +1,34 @@
+#sidebar {
+    width: 20%;
+    height: 100%;
+    background-color: #494949;
+}
+
+.dashboard-products {
+    width: 100%;
+    height: 6rem;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #747474;
+}
+
+.dashboard-products:hover {
+    background-color: #363636;
+}
+
+.dashboard-products:hover 
+.product__dashborad span {
+    color: #fff;
+}
+
+.icon {
+    margin-right: 1rem;
+    font-size: 2rem;
+    color: #c0c0c0;
+}
+
+.product__dashborad span {
+    font-size: 1.2rem;
+    color: #c0c0c0;
+}

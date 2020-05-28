@@ -7,6 +7,7 @@ import Footer from './component/footer/footer';
 import SignUpPage from './views/authentication/sign-up/sign-up';
 import SignInPage from './views/authentication/sign-in/sign-in';
 import Dashboard from './views/dashboard/dashboard';
+import BuyForMe from './component/b4m/buyForMe';
 
 class App extends Component {
 
@@ -45,6 +46,7 @@ class App extends Component {
         <Route path='/signup' component={ SignUpPage } />
         <Route path='/signin' component={ SignInPage } />
         <Route path='/dashboard' component={ Dashboard } />
+        <Route path='/buy' component={ BuyForMe } />
         {
           this.props.location.pathname != '/dashboard' && this.props.location.pathname === '/' && <Footer />
         }

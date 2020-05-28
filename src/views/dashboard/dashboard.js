@@ -1,20 +1,30 @@
-import React from 'react';
-import DashboardSidebar from './dashboard-sidebar/dashboard-sidebar';
-import DashboardBody from './dashboard-body/dashboard-body';
-import HeaderDashboard from './header-dashboard/header-dashboard';
+import React, { Component } from 'react';
+import Head from '../dashboard/head/head';
+import Body from '../dashboard/body/body';
 import './dashboard.css';
 
-const Dashboard = () => {
-    return(
-        <section>
+class Dashboard extends Component {
+
+    state = {
+        userMenuOut: false,
+    }
+
+    menuOut = () => {
+        this.setState({
+            userMenuOut: !this.state.userMenuOut
+        })
+    }
+
+    render() {
+        return(
             <div id='dashboard'>
-                <HeaderDashboard />
-                <DashboardSidebar />
-                <DashboardBody />
+                <div id='inner-dashboard'>
+                    <Head menuOut={ this.menuOut } userMenuOut={ this.state.userMenuOut } />
+                    <Body />
+                </div>
             </div>
-            
-        </section>
-    );
+        );
+    }
 }
 
 export default Dashboard;
