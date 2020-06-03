@@ -1,0 +1,36 @@
+#main-body {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mobile-menu {
+    width: 70vw;
+    height: 100vh;
+    background-color: #494949;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all .5s ease-in-out;
+    display: none;
+}
+
+#man {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+@media screen and (max-width: 1000px) {
+    #main-body {
+        width: 100%;
+    }
+    #mobile-menu {
+        display: block;
+    }
+}

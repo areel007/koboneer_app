@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,7 +9,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import './history.css';
+import './main-body.css';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -45,7 +47,7 @@ const useStyles = makeStyles({
     },
 });
 
-const History = () => {
+const BuyForMeMainBody = (props) => {
 
     const classes = useStyles();
     const success = {
@@ -55,15 +57,61 @@ const History = () => {
         color: 'red',
     };
 
+    const slide = {
+        transform: 'translateX(0%)',
+    };
+
     return (
-        <div id='history'>
-            <div id='inner-history'>
+        <div id='main-body'>
+            <div id='inner-main-body'>
                 <h2>Transaction History</h2>
                 <div id='search-box'>
                     <input type='text' />
                     <button id='search-icon'>
-                        <i class="fas fa-search"></i>
+                        <i className="fas fa-search"></i>
                     </button>
+                </div>
+                <div id='mobile-menu' style={props.sideBarOut ? slide : null}>
+                    <Link to='/buy' className='dashboard-products' >
+                        <div className='icon'>
+                            <i className="fas fa-shopping-bag"></i>
+                        </div>
+                        <div className='product__dashborad'>
+                            <span>Buy For Me</span>
+                        </div>
+                    </Link>
+                    <Link to='/trade' className='dashboard-products' >
+                        <div className='icon'>
+                            <i className="fas fa-money-bill-wave-alt"></i>
+                        </div>
+                        <div className='product__dashborad'>
+                            <span>Trade Currency</span>
+                        </div>
+                    </Link>
+                    <Link to='/sell' className='dashboard-products' >
+                        <div className='icon'>
+                            <i className="far fa-credit-card"></i>
+                        </div>
+                        <div className='product__dashborad'>
+                            <span>Pay For Me</span>
+                        </div>
+                    </Link>
+                    <Link to='/History' className='dashboard-products'>
+                        <div className='icon'>
+                            <i className="fas fa-file-medical-alt"></i>
+                        </div>
+                        <div className='product__dashborad'>
+                            <span>History</span>
+                        </div>
+                    </Link>
+                    <div className='dashboard-products'>
+                        <div className='icon'>
+                            <i className="fas fa-sign-out-alt"></i>
+                        </div>
+                        <div className='product__dashborad'>
+                            <span>Logout</span>
+                        </div>
+                    </div>
                 </div>
                 <TableContainer component={Paper}>
                     <Table className={classes.table} aria-label="customized table">
@@ -83,7 +131,7 @@ const History = () => {
                                         {row.token}
                                     </StyledTableCell>
                                     <StyledTableCell align="left">{row.transactionType}</StyledTableCell>
-                                    <StyledTableCell align="left" style={ row.status === 'Successful' ? success : failure }>{row.status}</StyledTableCell>
+                                    <StyledTableCell align="left" style={row.status === 'Successful' ? success : failure}>{row.status}</StyledTableCell>
                                     <StyledTableCell align="left">{row.date}</StyledTableCell>
                                     <StyledTableCell align="left">&#8358;{row.amount}</StyledTableCell>
                                 </StyledTableRow>
@@ -91,9 +139,12 @@ const History = () => {
                         </TableBody>
                     </Table>
                 </TableContainer>
+                <div id='verify'>
+                    <button>Verify</button>
+                </div>
             </div>
         </div>
     );
 }
 
-export default History;
+export default BuyForMeMainBody;

@@ -12,14 +12,14 @@ class Body extends Component {
     handleChange = () => {
         this.setState({
             show: !this.state.show
-        })
+        });
     }
 
     render() {
         return (
             <main id='body'>
-                <Sidebar handleChange={ this.handleChange } show={ this.state.show } />
-                <MainBody handleChange={ this.handleChange } show={ this.state.show } />
+                <Sidebar handleChange={ this.handleChange } sideBarOut={ this.props.sideBarOut } />
+                <MainBody handleChange={ this.handleChange } show={ this.state.show } show={ this.state.show } sideBarOut={ this.props.sideBarOut } />
             </main>
         );
     }

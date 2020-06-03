@@ -54,7 +54,7 @@ class Header extends Component {
                                 <Link className='link' to='/buy'>Careers</Link>
                             </div>
                         </div>
-                        <Link className='link' to='/dashboard'>Blog</Link>
+                        <Link className='link' to='/history'>Blog</Link>
                     </div>
                     <Link to='/signup' id='get-started'>Get Started</Link>
                 </nav>
@@ -77,7 +77,7 @@ class Header extends Component {
                                 <Link className='link' to='/buy'>Careers</Link>
                             </div>
                         </div>
-                        < Link className='link' to='/dashboard '>Blog</Link>
+                        < Link className='link' to='/history'>Blog</Link>
                     </div>
                     <Link to='/signup' id='get-started'>Get Started</Link>
                 </nav>

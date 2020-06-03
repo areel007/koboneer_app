@@ -1,0 +1,115 @@
+#head {
+    width: 100%;
+    height: 10vh;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    padding: 2rem
+}
+
+#dashboard-logo {
+    margin: 0 auto 0 4rem;
+    font-size: 2rem;
+    color: #494949;
+    font-weight: bold;
+}
+
+#user-detail {
+    margin-right: 4rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#user-detail:hover {
+    background-color: #e2e2e2;
+}
+
+#circle-avartar {
+    width: 80%;
+    height: 80%;
+    background-color: orangered;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#circle-avartar span {
+    font-weight: bold;
+    color: #fff;
+}
+
+#user-menu {
+    position: absolute;
+    right: .5rem;
+    top: 10vh;
+    display: none;
+}
+
+#user-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 0 .5rem #c5c5c5;
+    padding: 2rem;
+}
+
+#name {
+    font-size: 1.5rem;
+    color: #494949;
+    font-weight: bold;
+    margin-bottom: .3rem;
+}
+
+#email {
+    font-style: italic;
+    font-size: .9rem;
+    margin-bottom: 1rem;
+    color: orangered;
+}
+
+#logout {
+    background-color: #fff;
+    border: #e4e4e4 1px solid;
+    border-radius: .2rem;
+}
+
+#logout:hover {
+    background-color: #494949;
+    color: #fff;
+}
+
+#hamburger {
+    width: 2rem;
+    height: 1rem;
+    margin-right: auto;
+    visibility: hidden;
+}
+
+.bars {
+    width: 100%;
+    height: .2rem;
+    background-color: #000;
+    margin-top: .2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    #hamburger {
+        visibility: visible;
+        margin-right: 0;
+    }
+    #user-detail {
+        display: none;
+    }
+}

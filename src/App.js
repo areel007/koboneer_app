@@ -6,8 +6,10 @@ import Home from './views/home/home';
 import Footer from './component/footer/footer';
 import SignUpPage from './views/authentication/sign-up/sign-up';
 import SignInPage from './views/authentication/sign-in/sign-in';
-import Dashboard from './views/dashboard/dashboard';
-import BuyForMe from './component/b4m/buyForMe';
+import BuyForMe from './views/dashboard/b4m/BuyForMe';
+import SellForMe from './views/dashboard/s4m/sellForMe';
+import TradeForMe from './views/dashboard/t4m/tradeForMe';
+import History from './views/dashboard/history/history';
 
 class App extends Component {
 
@@ -40,15 +42,17 @@ class App extends Component {
     return (
       <div className="container">
         {
-          this.props.location.pathname != '/dashboard' && this.props.location.pathname === '/' && <Header header={this.state.header} product={this.state.product} company={this.state.company} user={this.state.user} openMenu={this.openMenu} />
+          this.props.location.pathname != '/history' && this.props.location.pathname === '/' && <Header header={this.state.header} product={this.state.product} company={this.state.company} user={this.state.user} openMenu={this.openMenu} />
         }
         <Route path='/' exact component={ Home } />
         <Route path='/signup' component={ SignUpPage } />
         <Route path='/signin' component={ SignInPage } />
-        <Route path='/dashboard' component={ Dashboard } />
         <Route path='/buy' component={ BuyForMe } />
+        <Route path='/sell' component={ SellForMe } />
+        <Route path='/trade' component={ TradeForMe } />
+        <Route path='/history' component={ History } />
         {
-          this.props.location.pathname != '/dashboard' && this.props.location.pathname === '/' && <Footer />
+          this.props.location.pathname != '/history' && this.props.location.pathname === '/' && <Footer />
         }
       </div>
     );
