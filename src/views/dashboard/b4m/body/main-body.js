@@ -8,6 +8,12 @@ class BuyForMeMainBody extends Component {
     state = {
         proceedToPayment: false,
         proceedToSuccess: false,
+        price: '0.00',
+    }
+
+    handlePrice = e => {
+        const price = e.target.value;
+        this.setState({ price });
     }
 
     handleProceedToPayment = (e) => {
@@ -91,22 +97,51 @@ class BuyForMeMainBody extends Component {
                                 </div>
                                 <form>
                                     <div className='form-control'>
-                                        <label>Order:</label>
-                                        <input type='text' placeholder='e.g: Shoe' />
+                                        <div className='label'>
+                                            <label>Order:</label>
+                                        </div>
+                                        <div className='input'>
+                                            <input type='text' placeholder='e.g: Shoe' />
+                                        </div>
                                     </div>
                                     <div className='form-control'>
-                                        <label>Price:</label>
-                                        <input type='text' placeholder='$0.00' />
-                                        <span id='naira-equiv'>&#8358;0.00</span>
+                                        <div className='label'>
+                                            <label>Price ($):</label>
+                                        </div>
+                                        <div className='input'>
+                                            <input type='text' placeholder='$0.00' onChange={this.handlePrice} />
+                                            <span id='naira-equiv'>&#8358;{(387.42 * this.state.price).toFixed(2)} </span>
+                                        </div>
                                     </div>
                                     <div className='form-control'>
-                                        <label>Store:</label>
-                                        <input type='text' placeholder='e.g: Amazon' />
+                                        <div className='label'>
+                                            <label>Store:</label>
+                                        </div>
+                                        <div className='input'>
+                                            <input type='text' placeholder='e.g: Amazon' />
+                                        </div>
                                     </div>
                                     <div className='form-control'>
-                                        <label>Address:</label>
-                                        <input type='text' placeholder='delivery addres' />
-                                        {/* <button>Default Address</button> */}
+                                        <div className='label'>
+                                            <label>Address:</label>
+                                        </div>
+                                        <div className='input'>
+                                            <input type='text' placeholder='delivery addres' />
+                                            {/* <button>Default Address</button> */}
+                                        </div>
+                                    </div>
+                                    <div className='form-control'>
+                                        <div className='label'>
+                                            <label>Payment Mode:</label>
+                                        </div>
+                                        <div className='input'>
+                                            <select>
+                                                <option>Select Payment Mode</option>
+                                                <option>Bitcoin</option>
+                                                <option>Paypal</option>
+                                                <option>Perfect Money</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div className='form-control'>
                                         <button onClick={this.handleProceedToPayment}>Proceed</button>
@@ -125,6 +160,9 @@ class BuyForMeMainBody extends Component {
                                 </div>
                             </div>
                             <div className='success' style={this.state.proceedToSuccess ? show : hide}>
+                                <div className='form-header'>
+                                    <h3>Order Status</h3>
+                                </div>
                                 <p>You have successfully oredered for a show on ebay</p>
                                 <Link className='linka' to='/history'>Review</Link>
                             </div>

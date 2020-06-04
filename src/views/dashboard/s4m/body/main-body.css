@@ -6,9 +6,114 @@
     align-items: center;
 }
 
-#inner-main-body {
+#sell-for-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+}
+
+/* #inner-main-body {
     width: 80%;
     height: 100%;
+} */
+
+.order {
+    width: 40rem;
+    height: 25rem;
+    /* box-shadow: 0 0 .3rem #d6d6d6; */
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.order-page, .payment-page, .success {
+    width: 90%;
+    height: 90%;
+    grid-area: 1/1/2/2;
+    background-color: #fff;
+}
+
+.order-page {
+    z-index: 0;
+}
+
+.payment-page {
+    z-index: 1;
+    display: none;
+}
+
+.success {
+    z-index: 2;
+    display: none;
+}
+
+.form-header {
+    width: 100%;
+    text-align: center;
+}
+
+.form-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cfcfcf;
+    padding: .5rem;
+}
+
+.form-control label {
+    margin-bottom: 0;
+    margin-right: .5rem;
+}
+
+.form-control input, .form-control select {
+    border: 1px solid transparent;
+    outline: none;
+    padding-left: 1rem;
+}
+
+.payment-page {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.payment-links {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.linka {
+    width: 20rem;
+    height: 2rem;
+    border: 1px solid #dadada;
+    margin-bottom: 1rem;
+    background-color: #494949;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.payment-page button {
+    background-color: orangered;
+    color: #fff;
+}
+
+.success p {
+    box-shadow: 0 0 .4rem #d6d6d6;
+    width: 20rem;
+    padding: 1rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.success .linka {
+    margin: 0 auto;
 }
 
 #mobile-menu {
@@ -21,16 +126,8 @@
     transform: translateX(-100%);
     transition: all .5s ease-in-out;
     display: none;
+    z-index: 5;
 }
-
-#man {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-
 
 @media screen and (max-width: 1000px) {
     #main-body {
