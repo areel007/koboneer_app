@@ -148,7 +148,7 @@ class BuyForMeMainBody extends Component {
                                     </div>
                                 </form>
                             </div>
-                            <div className='payment-page' style={this.state.proceedToPayment ? show : hide}>
+                            <div className='trade-payment-page' style={this.state.proceedToPayment ? show : hide}>
                                 <div className='form-header'>
                                     <h3>Payment Details</h3>
                                 </div>

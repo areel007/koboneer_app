@@ -6,11 +6,44 @@ import './main-body.css';
 
 class BuyForMeMainBody extends Component {
 
+    state = {
+        proceedToPayment: false,
+        proceedToSuccess: false,
+        price: '0.00',
+    }
+
+    handlePrice = e => {
+        const price = e.target.value;
+        this.setState({ price });
+    }
+
+    handleProceedToPayment = (e) => {
+        e.preventDefault()
+        this.setState({
+            proceedToPayment: !this.state.proceedToPayment,
+        })
+    }
+
+    handleProceedToSuccess = (e) => {
+        e.preventDefault()
+        this.setState({
+            proceedToSuccess: !this.state.proceedToSuccess,
+        })
+    }
+
     render() {
 
         const slide = {
             transform: 'translateX(0%)',
         };
+
+        const show = {
+            display: 'block',
+        }
+
+        const hide = {
+            display: 'none'
+        }
 
         return (
             <div id='main-body'>
@@ -57,9 +90,69 @@ class BuyForMeMainBody extends Component {
                             </div>
                         </div>
                     </div>
-                    <div id='man'>
-                        Hello from T4M
+                    <div id='trade-currency'>
+                        <div id='trade-currency-btns'>
+                            <div className='trade-btn'>
+                                <button>Buy</button>
+                            </div>
+                            <div className='trade-btn'>
+                                <button>Sell</button>
+                            </div>
+                        </div>
+                        <div id='buy-currency-body'>
+                            <div className='trade-order-page'>
+                                <h3>Buy Currency</h3>
+                                <form>
+                                    <div className='trade-currency-form'>
+                                        <label>Order</label>
+                                        <div className='tc-input-box'>
+                                            <input type='text' placeholder='$0.00' onChange={this.handlePrice} />
+                                            <select>
+                                                <option>Select Currency</option>
+                                                <option>Bitcoin</option>
+                                                <option>Paypal</option>
+                                                <option>Amazon</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className='trade-currency-form'>
+                                        <span id='naira-equiv'>&#8358;{(387.42 * this.state.price).toFixed(2)}</span>
+                                    </div>
+                                    <div className='trade-currency-form'>
+                                        <label>Receiver</label>
+                                        <div className='tc-input-box'>
+                                            <input type='text' placeholder='ID or Email' />
+                                        </div>
+                                    </div>
+                                    <div className='trade-currency-form'>
+                                        <button onClick={this.handleProceedToPayment}>Proceed</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div className='trade-payment-page' style={this.state.proceedToPayment ? show : hide}>
+                                <div id='trade-form-header'>
+                                    <h3>Payment Details</h3>
+                                </div>
+                                <div id='trade-payment-link'>
+                                    <Link className='trade-linka' to='/'>Pay Stack</Link>
+                                    <Link className='trade-linka' to='/'>Flutter Wave</Link>
+                                    <Link className='trade-linka' to='/'>Direct Transfer</Link>
+                                    <button onClick={this.handleProceedToSuccess}>Proceed</button>
+                                </div>
+                            </div>
+                            <div className='trade-success' >
+                                <div className='trade-form-header'>
+                                    <h3>Order Status</h3>
+                                </div>
+                                <p>You have successfully oredered for a show on ebay</p>
+                                <Link className='linka' to='/history'>Review</Link>
+                            </div>
+                        </div>
+                        <div id='sell-currency-body'>
+                            Sell
+                        </div>
                     </div>
+
                 </div>
             </div>
         );

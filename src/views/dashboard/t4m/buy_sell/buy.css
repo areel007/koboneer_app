@@ -1,0 +1,17 @@
+#mobile-menu-buy {
+    width: 70vw;
+    height: 100vh;
+    background-color: #494949;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all .5s ease-in-out;
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    #mobile-menu-buy {
+        display: block;
+    }
+}
