@@ -31,7 +31,8 @@ section {
         /* margin: 0; */
     }
     .landing-image {
-        width: 100%;
+        /* width: 100%; */
+        display: none;
     }
     .landing-form {
         width: 100%;

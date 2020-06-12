@@ -20,7 +20,7 @@ const Form = () => {
                     <button>Sign In</button>
                 </div>
                 <div className='switch'>
-                    <p>Don't have an account yet? <Link id='switch' to='/signup'>Sign In</Link></p>
+                    <p>Don't have an account yet? <Link id='switch' to='/signup'>Sign Up</Link></p>
                 </div>
             </div>
         </form>
