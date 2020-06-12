@@ -1,7 +1,7 @@
 import React from 'react';
 import Landing from './landing/landing';
 import Product from './product/product';
-import Newsletter from './newsletter/newsletter';
+// import Newsletter from './newsletter/newsletter';
 import './home.css';
 
 class Home extends React.Component {
@@ -13,7 +13,7 @@ class Home extends React.Component {
       <div id='home'>
         <Landing />
         <Product />
-        <Newsletter />
+        {/* <Newsletter /> */}
       </div>
     )
   }

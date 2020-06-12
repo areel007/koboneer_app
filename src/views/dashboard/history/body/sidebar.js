@@ -47,14 +47,14 @@ class Sidebar extends Component{
                         <span>History</span>
                     </div>
                 </Link>
-                <div className='dashboard-products'>
+                <Link to='/user' className='dashboard-products'>
                     <div className='icon'>
-                        <i className="fas fa-sign-out-alt"></i>
+                    <i class="fas fa-user-cog"></i>
                     </div>
                     <div className='product__dashborad'>
-                        <span>Logout</span>
+                        <span>Setting</span>
                     </div>
-                </div>
+                </Link>
             </aside>
         );
     }

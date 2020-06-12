@@ -10,88 +10,111 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100%;
-    width: 100%; */
+    height: 100%;
+    width: 100%;
 }
 
-.order {
+.order-b4m {
     width: 40rem;
     height: 25rem;
-    border-radius: 1rem;
     display: grid;
     grid-template-columns: 1fr;
-    justify-items: center;
+    /* justify-items: center;
     align-items: center;
+    background-color: red;
+    border-radius: 1rem; */
 }
 
-.order-page, .payment-page, .success {
-    width: 90%;
-    height: 90%;
+.order-page-b4m, .payment-b4m, .success-b4m {
+    width: 100%;
+    height: 100%;
     grid-area: 1/1/2/2;
     background-color: #fff;
 }
 
-.order-page {
+.order-page-b4m {
     z-index: 0;
 }
 
-.payment-page {
+.payment-b4m {
     z-index: 1;
     display: none;
 }
 
-.success {
+.success-b4m {
     z-index: 2;
     display: none;
 }
 
-.form-header {
+.form-header-b4m {
     width: 100%;
     text-align: center;
 }
 
-.form-control {
+.form-control-b4m {
     display: flex;
     align-items: center;
     border: 1px solid #cfcfcf;
     padding: .5rem;
+    margin-bottom: .5rem;
 }
 
-.label {
+.label-b4m {
     margin-bottom: 0;
     width: 30%;
     height: 100%;
     padding: 0.5rem;
 }
 
-.input {
+.input-b4m {
     display: flex;
     align-items: center;
     width: 80%;
 }
 
-.form-control input, .form-control select {
+.form-control-b4m input, .form-control-b4m select {
     border: 1px solid transparent;
     outline: none;
     padding-left: 1rem;
     width: 100%;
 }
 
-.payment-page {
+.form-control-b4m button {
+    width: 100%;
+    background-color: #494949;
+    color: #fff;
+}
+
+.payment-links-b4m button, .reviewing {
+    background-color: #494949;
+    color: #fff;
+}
+
+.payment-links-b4m button:hover, .reviewing:hover {
+    background-color: orangered;
+    color: #fff;
+}
+
+.form-control-b4m button:hover {
+    background-color: orangered;
+    color: #fff;
+}
+
+.payment-page-b4m {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
 
-.payment-links {
+.payment-links-b4m {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
 
-.linka {
+.linka-b4m {
     width: 20rem;
     height: 2rem;
     border: 1px solid #dadada;
@@ -103,12 +126,12 @@
     color: #fff;
 }
 
-.payment-page button {
+.payment-page-b4m button {
     background-color: orangered;
     color: #fff;
 }
 
-.success p {
+.success-b4m p {
     box-shadow: 0 0 .4rem #d6d6d6;
     width: 20rem;
     padding: 1rem;
@@ -116,7 +139,7 @@
     margin-bottom: 1rem;
 }
 
-.success .linka {
+.success-b4m .linka-b4m {
     margin: 0 auto;
 }
 

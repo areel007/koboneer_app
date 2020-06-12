@@ -10,7 +10,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100%; */
+    height: 100%;
+    width: 100%;
 }
 
 /* #inner-main-body {
@@ -18,7 +19,7 @@
     height: 100%;
 } */
 
-.order {
+.order-p4m {
     width: 40rem;
     height: 25rem;
     /* box-shadow: 0 0 .3rem #d6d6d6; */
@@ -29,65 +30,91 @@
     align-items: center;
 }
 
-.order-page, .payment-page, .success {
-    width: 90%;
-    height: 90%;
+.order-page-p4m, .payment-p4m, .success-p4m {
+    width: 100%;
+    height: 100%;
     grid-area: 1/1/2/2;
     background-color: #fff;
 }
 
-.order-page {
+.order-page-p4m {
     z-index: 0;
 }
 
-.payment-page {
+.payment-p4m {
     z-index: 1;
     display: none;
 }
 
-.success {
+.success-p4m {
     z-index: 2;
     display: none;
 }
 
-.form-header {
+.form-header-p4m {
     width: 100%;
     text-align: center;
 }
 
-.form-control {
+.form-control-p4m {
     display: flex;
     align-items: center;
     border: 1px solid #cfcfcf;
     padding: .5rem;
+    margin: .5rem;
 }
 
-.form-control label {
+.label-p4m {
     margin-bottom: 0;
     margin-right: .5rem;
+    width: 20%;
 }
 
-.form-control input, .form-control select {
+.form-control-p4m .input-p4m, .form-control-p4m select {
     border: 1px solid transparent;
-    outline: none;
     padding-left: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.payment-page {
+.form-control-p4m button {
+    background-color: #494949;
+    color: #fff;
+    width: 100%;
+}
+
+.payment-links-p4m button:hover, .linka-p4m:hover {
+    background-color: orangered;
+}
+
+.form-control-p4m button:hover {
+    background-color: orangered;
+    color: #fff;
+}
+
+.input-p4m input, .input select {
+    padding: .5rem;
+    width: 100%;
+    outline: none;
+    border: 1px solid transparent;
+}
+
+.payment-p4m {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
 
-.payment-links {
+.payment-links-p4m {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
 
-.linka {
+.linka-p4m {
     width: 20rem;
     height: 2rem;
     border: 1px solid #dadada;
@@ -99,12 +126,17 @@
     color: #fff;
 }
 
-.payment-page button {
+.payment-p4m button {
     background-color: orangered;
     color: #fff;
 }
 
-.success p {
+.payment-links-p4m button {
+    background-color: #494949;
+    color: #fff;
+}
+
+.success-p4m p {
     box-shadow: 0 0 .4rem #d6d6d6;
     width: 20rem;
     padding: 1rem;
@@ -112,7 +144,7 @@
     margin-bottom: 1rem;
 }
 
-.success .linka {
+.success-p4m .linka-p4m {
     margin: 0 auto;
 }
 

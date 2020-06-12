@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './sidebar.css';
 import { Link } from 'react-router-dom';
 
-class Sidebar extends Component{
+class Sidebar extends Component {
 
-    handleChange=() => {
+    handleChange = () => {
         this.props.handleChange()
     }
 
@@ -15,7 +15,7 @@ class Sidebar extends Component{
         }
 
         return (
-            <aside id='sidebar' style={ this.props.sideBarOut ? slideBar : null} >
+            <aside id='sidebar' style={this.props.sideBarOut ? slideBar : null} >
                 <Link to='/buy' className='dashboard-products' >
                     <div className='icon'>
                         <i className="fas fa-shopping-bag"></i>
@@ -48,14 +48,14 @@ class Sidebar extends Component{
                         <span>History</span>
                     </div>
                 </Link>
-                <div className='dashboard-products'>
+                <Link to='/user' className='dashboard-products'>
                     <div className='icon'>
-                        <i className="fas fa-sign-out-alt"></i>
+                    <i class="fas fa-user-cog"></i>
                     </div>
                     <div className='product__dashborad'>
-                        <span>Logout</span>
+                        <span>Setting</span>
                     </div>
-                </div>
+                </Link>
             </aside>
         );
     }

@@ -28,26 +28,50 @@
     width: 100%;
 }
 
-#buy-currency-body {
-    width: 40rem;
+/* End of button styling */
+
+.tc {
+    width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
 }
 
-.trade-order-page {
-    background-color: #fff;
-    grid-area: 1/1/2/2;
-    z-index: 0;
+.buy-currency-body {
     width: 100%;
     height: 100%;
-    padding: .5rem;
+    grid-area: 1/1/2/2;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
-.trade-order-page h3 {
+.order-tc, .payment-tc, .success-tc {
+    background-color: #fff;
+    grid-area: 1/1/2/2;
+    width: 45rem;
+    height: 25rem;
+    padding: .5rem;
+    margin: 0 auto;
+}
+
+.order-tc h3{
     width: 100%;
     text-align: center;
     color: orangered;
+}
+
+.order-tc {
+    z-index: 0;
+}
+
+.payment-tc {
+    z-index: 1;
+    display: none;
+}
+
+.success-tc {
+    z-index: 2;
+    display: none;
 }
 
 .trade-currency-form {
@@ -56,6 +80,14 @@
     border: 1px solid grey;
     display: flex;
     margin-bottom: 1rem;
+}
+
+.trade-currency-form button {
+    width: 100%;
+}
+
+.trade-currency-form button:hover {
+    background-color: orangered;
 }
 
 .trade-currency-form label {
@@ -86,27 +118,30 @@
     color: #fff;
 }
 
-.trade-payment-page {
-    background-color: yellow;
-    grid-area: 1/1/2/2;
-    z-index: -1;
+.form-header-tc {
+    width: 100%;
+    text-align: center;
+    color: orangered;
 }
 
-.payment-page {
+.payment-link-tc button {
+    background-color: #494949;
+    color: #fff;
+}
+
+.payment-link-tc button:hover {
+    background-color: orangered;
+    color: #fff;
+}
+
+.payment-link-tc {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
 
-.trade-payment-links {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-}
-
-.trade-linka {
+.linka-tc {
     width: 20rem;
     height: 2rem;
     border: 1px solid #dadada;
@@ -118,12 +153,22 @@
     color: #fff;
 }
 
-.trade-success {
-    background-color: red;
-    grid-area: 1/1/2/2;
-    z-index: -2;
+.success-tc .linka-tc {
+    margin: 0 auto;
 }
 
-#sell-currency-body {
+.linka-tc:hover {
+    background-color: orangered;
+}
+
+.success-tc p {
+    box-shadow: 0 0 .4rem #d6d6d6;
+    width: 20rem;
+    padding: 1rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.sell-currency-body {
     display: none;
 }

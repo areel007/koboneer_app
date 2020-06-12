@@ -10,6 +10,7 @@ class BuyForMeMainBody extends Component {
         proceedToPayment: false,
         proceedToSuccess: false,
         price: '0.00',
+        showPage: true,
     }
 
     handlePrice = e => {
@@ -28,6 +29,13 @@ class BuyForMeMainBody extends Component {
         e.preventDefault()
         this.setState({
             proceedToSuccess: !this.state.proceedToSuccess,
+        })
+    }
+
+    handleShowSellPage = (e) => {
+        e.preventDefault();
+        this.setState({
+            showPage: !this.state.showPage,
         })
     }
 
@@ -93,63 +101,111 @@ class BuyForMeMainBody extends Component {
                     <div id='trade-currency'>
                         <div id='trade-currency-btns'>
                             <div className='trade-btn'>
-                                <button>Buy</button>
+                                <button >Buy</button>
                             </div>
                             <div className='trade-btn'>
-                                <button>Sell</button>
+                                <button >Sell</button>
                             </div>
                         </div>
-                        <div id='buy-currency-body'>
-                            <div className='trade-order-page'>
-                                <h3>Buy Currency</h3>
-                                <form>
-                                    <div className='trade-currency-form'>
-                                        <label>Order</label>
-                                        <div className='tc-input-box'>
-                                            <input type='text' placeholder='$0.00' onChange={this.handlePrice} />
-                                            <select>
-                                                <option>Select Currency</option>
-                                                <option>Bitcoin</option>
-                                                <option>Paypal</option>
-                                                <option>Amazon</option>
-                                            </select>
+                        <div className='tc'>
+                            <div className='buy-currency-body'>
+                                <div className='order-tc'>
+                                    <h3>Buy Currency</h3>
+                                    <form>
+                                        <div className='trade-currency-form'>
+                                            <label>Order</label>
+                                            <div className='tc-input-box'>
+                                                <input type='text' placeholder='$0.00' onChange={ this.handlePrice } />
+                                                <select>
+                                                    <option>Select Currency</option>
+                                                    <option>Bitcoin</option>
+                                                    <option>Paypal</option>
+                                                    <option>Amazon</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className='trade-currency-form'>
-                                        <span id='naira-equiv'>&#8358;{(387.42 * this.state.price).toFixed(2)}</span>
-                                    </div>
-                                    <div className='trade-currency-form'>
-                                        <label>Receiver</label>
-                                        <div className='tc-input-box'>
-                                            <input type='text' placeholder='ID or Email' />
+                                        <div className='trade-currency-form'>
+                                            <span id='naira-equiv'>&#8358;{(387.42 * this.state.price).toFixed(2)}</span>
                                         </div>
+                                        <div className='trade-currency-form'>
+                                            <label>Receiver</label>
+                                            <div className='tc-input-box'>
+                                                <input type='text' placeholder='ID or Email' />
+                                            </div>
+                                        </div>
+                                        <div className='trade-currency-form'>
+                                            <button onClick={this.handleProceedToPayment}>Proceed</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div className='payment-tc' style={this.state.proceedToPayment ? show : hide}>
+                                    <div className='form-header-tc'>
+                                        <h3>Payment Details</h3>
                                     </div>
-                                    <div className='trade-currency-form'>
-                                        <button onClick={this.handleProceedToPayment}>Proceed</button>
+                                    <div className='payment-link-tc'>
+                                        <Link className='linka-tc' to='/'>Pay Stack</Link>
+                                        <Link className='linka-tc' to='/'>Flutter Wave</Link>
+                                        <Link className='linka-tc' to='/'>Direct Transfer</Link>
+                                        <button onClick={this.handleProceedToSuccess}>Proceed</button>
                                     </div>
-                                </form>
-                            </div>
-                            <div className='trade-payment-page' style={this.state.proceedToPayment ? show : hide}>
-                                <div id='trade-form-header'>
-                                    <h3>Payment Details</h3>
                                 </div>
-                                <div id='trade-payment-link'>
-                                    <Link className='trade-linka' to='/'>Pay Stack</Link>
-                                    <Link className='trade-linka' to='/'>Flutter Wave</Link>
-                                    <Link className='trade-linka' to='/'>Direct Transfer</Link>
-                                    <button onClick={this.handleProceedToSuccess}>Proceed</button>
+                                <div className='success-tc' style={this.state.proceedToSuccess ? show : hide}>
+                                    <div className='form-header-tc'>
+                                        <h3>Order Status</h3>
+                                    </div>
+                                    <p>You have successfully oredered for a show on ebay</p>
+                                    <Link className='linka-tc' to='/history'>Review</Link>
                                 </div>
                             </div>
-                            <div className='trade-success' >
-                                <div className='trade-form-header'>
-                                    <h3>Order Status</h3>
+                            <div className='sell-currency-body'>
+                                <div className='order-tc'>
+                                    <h3>Sell Currency</h3>
+                                    <form>
+                                        <div className='trade-currency-form'>
+                                            <label>Order</label>
+                                            <div className='tc-input-box'>
+                                                <input type='text' placeholder='$0.00' onChange={this.handlePrice} />
+                                                <select>
+                                                    <option>Select Currency</option>
+                                                    <option>Bitcoin</option>
+                                                    <option>Paypal</option>
+                                                    <option>Amazon</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div className='trade-currency-form'>
+                                            <span id='naira-equiv'>&#8358;{(387.42 * this.state.price).toFixed(2)}</span>
+                                        </div>
+                                        <div className='trade-currency-form'>
+                                            <label>Receiver</label>
+                                            <div className='tc-input-box'>
+                                                <input type='text' placeholder='ID or Email' />
+                                            </div>
+                                        </div>
+                                        <div className='trade-currency-form'>
+                                            <button onClick={this.handleProceedToPayment}>Proceed</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <p>You have successfully oredered for a show on ebay</p>
-                                <Link className='linka' to='/history'>Review</Link>
+                                <div className='payment-tc' style={this.state.proceedToPayment ? show : hide}>
+                                    <div className='form-header-tc'>
+                                        <h3>Payment Details</h3>
+                                    </div>
+                                    <div className='payment-link-tc'>
+                                        <Link className='linka-tc' to='/'>Pay Stack</Link>
+                                        <Link className='linka-tc' to='/'>Flutter Wave</Link>
+                                        <Link className='linka-tc' to='/'>Direct Transfer</Link>
+                                        <button onClick={this.handleProceedToSuccess}>Proceed</button>
+                                    </div>
+                                </div>
+                                <div className='success-tc' style={this.state.proceedToSuccess ? show : hide}>
+                                    <div className='form-header-tc'>
+                                        <h3>Order Status</h3>
+                                    </div>
+                                    <p>You have successfully oredered for a show on ebay</p>
+                                    <Link className='linka-tc' to='/history'>Review</Link>
+                                </div>
                             </div>
-                        </div>
-                        <div id='sell-currency-body'>
-                            Sell
                         </div>
                     </div>
 

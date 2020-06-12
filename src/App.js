@@ -10,6 +10,7 @@ import BuyForMe from './views/dashboard/b4m/BuyForMe';
 import SellForMe from './views/dashboard/s4m/sellForMe';
 import TradeForMe from './views/dashboard/t4m/tradeForMe';
 import History from './views/dashboard/history/history';
+import UserProfile from './views/dashboard/user-profile-setting/user-profile';
 
 class App extends Component {
 
@@ -51,6 +52,7 @@ class App extends Component {
         <Route path='/sell' component={ SellForMe } />
         <Route path='/trade' component={ TradeForMe } />
         <Route path='/history' component={ History } />
+        <Route path='/user' component={ UserProfile } />
         {
           this.props.location.pathname != '/history' && this.props.location.pathname === '/' && <Footer />
         }
